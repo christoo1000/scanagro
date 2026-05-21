@@ -1,0 +1,22 @@
+{
+  "app_name": "AgroAI Doctor",
+  "scan_crop": "Gwada Shuka",
+  "view_history": "Dubi Tarihi",
+  "get_advice": "Nemi Shawara",
+  "scan_hint": "Ɗauki hoton ganyen a sarari",
+  "processing": "Ana nazari...",
+  "disease": "Ciwon Shuka",
+  "confidence": "Tabbas",
+  "severity": "Tsananin Ciwo",
+  "treatment": "Abin yi",
+  "prevention": "Kariya",
+  "login": "Shiga",
+  "guest_mode": "Ci gaba a matsayin baƙo",
+  "camera": "Kamara",
+  "gallery": "Gidan Hoto",
+  "retry": "Sake Gwada",
+  "low": "Kadan",
+  "medium": "Tsaka-tsaki",
+  "high": "Sosai",
+  "severe": "Mafi Tsanani"
+}

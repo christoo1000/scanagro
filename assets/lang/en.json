@@ -1,0 +1,22 @@
+{
+  "app_name": "AgroAI Doctor",
+  "scan_crop": "Scan Crop",
+  "view_history": "View History",
+  "get_advice": "Get Advice",
+  "scan_hint": "Take a clear photo of the leaf",
+  "processing": "Analyzing...",
+  "disease": "Disease",
+  "confidence": "Confidence",
+  "severity": "Severity",
+  "treatment": "What to do",
+  "prevention": "Prevention",
+  "login": "Login",
+  "guest_mode": "Continue as Guest",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "retry": "Try Again",
+  "low": "Low",
+  "medium": "Medium",
+  "high": "High",
+  "severe": "Severe"
+}

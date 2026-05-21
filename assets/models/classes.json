@@ -1,0 +1,23 @@
+[
+  "cassava_bacterial_blight",
+  "cassava_brown_streak_disease",
+  "cassava_green_mottle",
+  "cassava_healthy",
+  "cassava_mosaic_disease",
+  "maize_cercospora_leaf_spot_gray_leaf_spot",
+  "maize_common_rust",
+  "maize_healthy",
+  "maize_northern_leaf_blight",
+  "pepper_bell_bacterial_spot",
+  "pepper_bell_healthy",
+  "tomato_bacterial_spot",
+  "tomato_early_blight",
+  "tomato_healthy",
+  "tomato_late_blight",
+  "tomato_leaf_mold",
+  "tomato_septoria_leaf_spot",
+  "tomato_spider_mites_two_spotted_spider_mite",
+  "tomato_target_spot",
+  "tomato_tomato_mosaic_virus",
+  "tomato_tomato_yellow_leaf_curl_virus"
+]

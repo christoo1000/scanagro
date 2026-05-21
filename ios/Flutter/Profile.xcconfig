@@ -1,0 +1,6 @@
+#include "Generated.xcconfig"
+#include? "../Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"
+
+MODULE_CACHE_DIR = $(PROJECT_TEMP_ROOT)/ModuleCache.noindex
+CLANG_MODULES_BUILD_SESSION_FILE = $(MODULE_CACHE_DIR)/Session.modulevalidation
+SDK_STAT_CACHE_DIR = $(PROJECT_TEMP_ROOT)
