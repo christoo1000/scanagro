@@ -5,6 +5,7 @@ import 'package:agro_ai_doctor/features/scan/presentation/screens/advice_screen.
 import 'package:agro_ai_doctor/features/scan/presentation/screens/history_screen.dart';
 import 'package:agro_ai_doctor/features/scan/presentation/screens/scan_screen.dart';
 import 'package:agro_ai_doctor/features/scan/presentation/providers/scan_provider.dart';
+import '../../../community/community_home.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -115,9 +116,10 @@ class HomeScreen extends ConsumerWidget {
                           icon: Icons.groups_outlined,
                           color: Colors.purple[400]!,
                           onPressed: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Community feature coming soon!'),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const CommunityHome(),
                               ),
                             );
                           },
