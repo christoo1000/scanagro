@@ -54,6 +54,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
     ref.listen(scanStateProvider, (previous, next) {
       next.whenData((diagnosis) {
         if (diagnosis != null) {
+          ref.invalidate(scanHistoryProvider);
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (_) => ResultScreen(diagnosis: diagnosis)),
@@ -83,7 +84,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                     borderRadius: BorderRadius.circular(32),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withValues(alpha: 0.1),
                         blurRadius: 20,
                         offset: const Offset(0, 10),
                       ),
@@ -145,7 +146,7 @@ class _ScanScreenState extends ConsumerState<ScanScreen> {
                     Container(
                       padding: const EdgeInsets.all(32),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary.withOpacity(0.05),
+                        color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(

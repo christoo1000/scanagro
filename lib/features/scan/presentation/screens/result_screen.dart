@@ -124,7 +124,7 @@ class _AIExplanationSection extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.purple.withOpacity(0.3),
+            color: Colors.purple.withValues(alpha: 0.3),
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -157,7 +157,7 @@ class _AIExplanationSection extends StatelessWidget {
                         'Get a detailed explanation and more tips',
                         style: GoogleFonts.dmSans(
                           fontSize: 13,
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha: 0.9),
                         ),
                       ),
                     ],
@@ -287,7 +287,7 @@ class _ResultHeader extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
-        color: severityColor.withOpacity(0.1),
+        color: severityColor.withValues(alpha: 0.1),
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(40)),
       ),
       child: Column(
@@ -295,7 +295,7 @@ class _ResultHeader extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              color: severityColor.withOpacity(0.2),
+              color: severityColor.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(100),
             ),
             child: Text(
@@ -405,7 +405,7 @@ class _RecommendationCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor.withOpacity(0.1),
+                    color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(

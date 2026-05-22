@@ -5,6 +5,7 @@ import 'package:agro_ai_doctor/features/scan/presentation/screens/advice_screen.
 import 'package:agro_ai_doctor/features/scan/presentation/screens/history_screen.dart';
 import 'package:agro_ai_doctor/features/scan/presentation/screens/scan_screen.dart';
 import 'package:agro_ai_doctor/features/scan/presentation/providers/scan_provider.dart';
+import 'package:agro_ai_doctor/features/settings/presentation/screens/settings_screen.dart';
 import '../../../community/community_home.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -42,9 +43,9 @@ class HomeScreen extends ConsumerWidget {
                   child: CircleAvatar(
                     backgroundColor: Theme.of(
                       context,
-                    ).colorScheme.primary.withOpacity(0.1),
+                    ).colorScheme.primary.withValues(alpha: 0.1),
                     child: Icon(
-                      Icons.person_outline,
+                      Icons.eco_outlined,
                       color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
@@ -128,13 +129,12 @@ class HomeScreen extends ConsumerWidget {
                           label: 'Settings',
                           icon: Icons.settings_outlined,
                           color: Colors.blueGrey[400]!,
-                          onPressed: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Settings feature coming soon!'),
-                              ),
-                            );
-                          },
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const SettingsScreen(),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -156,7 +156,7 @@ class HomeScreen extends ConsumerWidget {
         gradient: LinearGradient(
           colors: [
             Theme.of(context).colorScheme.primary,
-            Theme.of(context).colorScheme.primary.withOpacity(0.8),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -164,7 +164,7 @@ class HomeScreen extends ConsumerWidget {
         borderRadius: BorderRadius.circular(32),
         boxShadow: [
           BoxShadow(
-            color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -185,7 +185,7 @@ class HomeScreen extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -208,7 +208,7 @@ class HomeScreen extends ConsumerWidget {
                   'Identify diseases instantly with AI',
                   style: GoogleFonts.dmSans(
                     fontSize: 14,
-                    color: Colors.white.withOpacity(0.9),
+                    color: Colors.white.withValues(alpha: 0.9),
                   ),
                 ),
               ],
@@ -249,7 +249,7 @@ class _QuickActionCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.1),
+                  color: color.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(icon, color: color),

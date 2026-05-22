@@ -1,17 +1,19 @@
 import 'package:agro_ai_doctor/features/scan/data/datasources/advice_datasource.dart';
 import 'package:agro_ai_doctor/features/scan/data/models/general_advice.dart';
+import 'package:agro_ai_doctor/features/settings/presentation/providers/settings_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AdviceScreen extends StatefulWidget {
+class AdviceScreen extends ConsumerStatefulWidget {
   const AdviceScreen({super.key});
 
   @override
-  State<AdviceScreen> createState() => _AdviceScreenState();
+  ConsumerState<AdviceScreen> createState() => _AdviceScreenState();
 }
 
-class _AdviceScreenState extends State<AdviceScreen> {
-  final _cropController = TextEditingController();
+class _AdviceScreenState extends ConsumerState<AdviceScreen> {
+  late final TextEditingController _cropController;
   final _questionController = TextEditingController();
   final _scrollController = ScrollController();
   final _adviceDataSource = AdviceDataSource();
@@ -23,6 +25,13 @@ class _AdviceScreenState extends State<AdviceScreen> {
   ];
 
   bool _isSending = false;
+
+  @override
+  void initState() {
+    super.initState();
+    final settings = ref.read(appSettingsProvider);
+    _cropController = TextEditingController(text: settings.defaultCrop);
+  }
 
   @override
   void dispose() {
@@ -144,7 +153,7 @@ class _AdviceScreenState extends State<AdviceScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.surface,
-              border: Border(bottom: BorderSide(color: Colors.green.withOpacity(0.1))),
+              border: Border(bottom: BorderSide(color: Colors.green.withValues(alpha: 0.1))),
             ),
             child: Row(
               children: [
@@ -189,7 +198,7 @@ class _AdviceScreenState extends State<AdviceScreen> {
               color: Theme.of(context).colorScheme.surface,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, -5),
                 ),
@@ -274,7 +283,7 @@ class _ChatBubble extends StatelessWidget {
               width: 32,
               height: 32,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(Icons.auto_awesome_rounded, size: 16, color: Theme.of(context).colorScheme.primary),
@@ -299,13 +308,13 @@ class _ChatBubble extends StatelessWidget {
                 boxShadow: [
                   if (!message.isUser && !message.isError)
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 5,
                       offset: const Offset(0, 2),
                     ),
                 ],
                 border: !message.isUser && !message.isError
-                    ? Border.all(color: Colors.green.withOpacity(0.1))
+                    ? Border.all(color: Colors.green.withValues(alpha: 0.1))
                     : null,
               ),
               child: Text(
@@ -328,7 +337,7 @@ class _ChatBubble extends StatelessWidget {
               width: 32,
               height: 32,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(Icons.person_outline_rounded, size: 16, color: Theme.of(context).colorScheme.primary),
@@ -354,7 +363,7 @@ class _TypingBubble extends StatelessWidget {
             width: 32,
             height: 32,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+              color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(Icons.auto_awesome_rounded, size: 16, color: Theme.of(context).colorScheme.primary),
@@ -367,7 +376,7 @@ class _TypingBubble extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 5,
                   offset: const Offset(0, 2),
                 ),

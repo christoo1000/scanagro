@@ -5,4 +5,5 @@ abstract class ScanRepository {
   Future<CropDiagnosis> diagnoseImage(File image);
   Future<List<CropDiagnosis>> getScanHistory();
   Future<void> saveDiagnosis(CropDiagnosis diagnosis);
+  Future<void> clearScanHistory();
 }
